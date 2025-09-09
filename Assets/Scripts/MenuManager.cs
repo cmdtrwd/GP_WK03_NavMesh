@@ -1,5 +1,6 @@
 using UnityEngine;
 using Unity.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -13,5 +14,11 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu()
     {
         anim.SetTrigger("CloseMenu");
+        Invoke("LoadGameScene", 2f);
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }
